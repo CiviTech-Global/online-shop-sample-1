@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Vazirmatn", system-ui, -apple-system, sans-serif;
+
+  --color-primary: #e63946;
+  --color-primary-dark: #c62828;
+  --color-secondary: #1d3557;
+  --color-accent: #f4a261;
+  --color-success: #2a9d8f;
+  --color-background: #f8f9fa;
+  --color-surface: #ffffff;
+  --color-text: #212529;
+  --color-text-secondary: #6c757d;
+  --color-border: #dee2e6;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: "Vazirmatn", system-ui, sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    line-height: 1.7;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  input,
+  textarea,
+  select,
+  button {
+    font-family: inherit;
+  }
+
+  /* RTL scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .tabular-nums-fa {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
